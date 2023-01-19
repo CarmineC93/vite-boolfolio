@@ -1,34 +1,28 @@
 <script>
-import axios from 'axios';
+
+import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
+
 
 export default{
     name: 'App',
     data(){
         return{
-            projects:[],
         }
     },
     components:{
-
-    },
-    created(){
-        this.getProjects();
-    },
-    methods:{
-        getProjects(){
-            axios.get('http://127.0.0.1:8000/api/projects').then(resp => {
-                console.log(resp);
-                                // =risposta dell'axios/object nella risposta/nome che abbiamo dato a una delle key dell'object con i dati del database
-                this.projects = resp.data.results
-            })
-        }
+        AppMain,
+        AppHeader,
 
     }
 }
 </script>
 
-<template>
 
+<template>
+    <AppHeader/>
+
+    <AppMain/>
 </template>
 
 <style lang="scss">
