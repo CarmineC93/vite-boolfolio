@@ -40,13 +40,16 @@ export default {
 
                     <h3 class="card-title">{{ project.title }}</h3>
 
-                    <!-- <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between">
                         <p>
-                            <span v-for="tecnology in project.tecnologies" :key="tecnology.id">#{{ tecnology.name }} </span>
+                            <span v-for="technology in project.technologies" :key="technology.id"> 
+                                #{{ technology.name }} 
+                            </span>
                         </p>
-                        <p class="text-end text-success">{{ project.type ? project.name : 'Nessuna categoria' }}
+                        <p class="text-end text-success">{{ project.type ? project.type.name : 'Nessun tipo' }}
                         </p>
-                    </div> -->
+                    </div>
+
                     <p class="card-text">
                         {{ descriptionPreview }}
                     </p>

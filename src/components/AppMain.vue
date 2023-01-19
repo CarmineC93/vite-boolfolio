@@ -20,7 +20,7 @@ export default {
             this.loading = true;
 
             axios.get(`${this.url}/api/projects`).then(resp => {
-                // console.log(resp);
+                 console.log(resp);
                 // =risposta dell'axios/object nella risposta/nome che abbiamo dato a una delle key dell'object con i dati del database
                 this.projects = resp.data.results
 
