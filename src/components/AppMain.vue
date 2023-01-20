@@ -6,7 +6,9 @@ import {store} from '../store';
 
 export default {
     name: "AppMain",
-    components: { AppProjectCard, AppLoader },
+    components: { 
+        AppProjectCard, 
+        AppLoader },
     data() {
         return {
             store,
