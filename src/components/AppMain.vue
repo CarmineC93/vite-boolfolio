@@ -2,7 +2,7 @@
 import axios from 'axios';
 import AppLoader from './AppLoader.vue';
 import AppProjectCard from './AppProjectCard.vue';
-import {store} from '..store';
+import {store} from '../store';
 
 export default {
     name: "AppMain",
