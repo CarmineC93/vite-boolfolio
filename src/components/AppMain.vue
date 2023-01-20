@@ -2,12 +2,14 @@
 import axios from 'axios';
 import AppLoader from './AppLoader.vue';
 import AppProjectCard from './AppProjectCard.vue';
+import {store} from '..store';
+
 export default {
     name: "AppMain",
     components: { AppProjectCard, AppLoader },
     data() {
         return {
-            url: "http://127.0.0.1:8000",
+            store,
             projects:[],
             loading: false
         };
@@ -19,7 +21,7 @@ export default {
         getProjects(){
             this.loading = true;
 
-            axios.get(`${this.url}/api/projects`).then(resp => {
+            axios.get(`${this.store.url}/api/projects`).then(resp => {
                  console.log(resp);
                 // =risposta dell'axios/object nella risposta/nome che abbiamo dato a una delle key dell'object con i dati del database
                 this.projects = resp.data.results

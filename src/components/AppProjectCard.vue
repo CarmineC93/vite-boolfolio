@@ -1,11 +1,13 @@
 <script>
+import {store} from '..store';
+
 export default {
     name: 'AppProjectCard',
     data() {
         return {
+            store,
             contentMaxLength: 50,
             // qui l'url mi servirà per le immagini
-            url: "http://127.0.0.1:8000",
         }
     },
     props: {
@@ -31,7 +33,7 @@ export default {
         <div class="card-body">
             <div class="row justify-content-between">
                 <div class="col-4">
-                    <img v-if="project.cover_image" class="w-100" :src="`${url}/storage/${project.cover_image}`" alt="">
+                    <img v-if="project.cover_image" class="w-100" :src="`${this.store.url}/storage/${project.cover_image}`" alt="">
                     <div v-else>
                         Nessuna immagine
                     </div>
