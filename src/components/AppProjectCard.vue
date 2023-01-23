@@ -55,7 +55,9 @@ export default {
                     <p class="card-text">
                         {{ descriptionPreview }}
                     </p>
+
                     <a class="btn btn-primary" href="">Apri</a>
+                
                 </div>
             </div>
 

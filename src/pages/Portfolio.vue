@@ -45,7 +45,7 @@ export default {
 
 <template>
     <div class="container">
-        <h2 class="text-center mb-3">Tutti i nostri post</h2>
+        <h2 class="text-center mb-3 ">Tutti i nostri progetti</h2>
         <AppLoader v-if="loading" />
         <div v-else class="row justify-content-center py-4">
             <div class="col-11 col-md-10 col-lg-8">
