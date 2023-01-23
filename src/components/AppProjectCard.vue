@@ -56,8 +56,8 @@ export default {
                         {{ descriptionPreview }}
                     </p>
 
-                    <a class="btn btn-primary" href="">Apri</a>
-                
+                    <router-link :to="{ name: 'single-project', params: { slug: project.slug } }" class="btn btn-primary"
+                        href="">Mostra</router-link>                
                 </div>
             </div>
 
