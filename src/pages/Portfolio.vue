@@ -31,7 +31,7 @@ export default {
             }
             this.loading = true;
             axios.get(`${this.store.url}/api/projects`, options).then(resp => {
-                //console.log(resp.data.results);
+                console.log(resp.data.results);
                 this.projects = resp.data.results.data;
                 this.currentPage = resp.data.results.current_page;
                 this.lastPage = resp.data.results.last_page;

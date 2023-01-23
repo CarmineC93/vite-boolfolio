@@ -28,8 +28,7 @@ export default {
 <template>
     <main>
         <div class="container">
-            <h1 class="mt-3 text-center">{{ project.title }}</h1>
-            <!-- <h5 class="text-center mt-2 text-uppercase text-primary">{{ category }}</h5> -->
+            <h1 class="mt-3 text-center">{{ project.name }}</h1>
             <img v-if="project.cover_image" :src="`${store.url}/storage/${project.cover_image}`" alt="">
             <div v-else class="text-center mt-4">Nessuna immagine</div>
 

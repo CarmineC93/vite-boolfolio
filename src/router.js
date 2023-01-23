@@ -31,7 +31,7 @@ const router = createRouter({
         {
         //il contenuto della pagina cambierà in base al parametro dopo i :
             path: "/portfolio/:slug",
-            name: "singleProject",
+            name: "single-project",
             component: SingleProject, 
         },
         //questa rotta dovrà essere sempre inserita dopo le altre poichè controllerà tutte le rotte precedenti
