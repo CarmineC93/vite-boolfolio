@@ -33,7 +33,6 @@ export default {
             return this.project.technologies ? this.project.technologies : 'Nessuna tecnologia specificata';
         }
     }
-
 }
 </script>
 
@@ -43,7 +42,7 @@ export default {
             <h1 class="mt-3 text-center">{{ project.title }}</h1>
             <h5 class="text-center mt-2 text-uppercase text-primary">{{ type }}</h5>
             
-            <h5 v-for="technology in technologies" class="text-center mt-2 text-uppercase text-primary">{{ technology.name }}</h5>
+            <h5 v-for="technology in technologies" class="text-center mt-2 text-uppercase text-success">{{ technology.name }}</h5>
 
             <img v-if="project.cover_image" :src="`${store.url}/storage/${project.cover_image}`" alt="" style="max-width:300px">
             <div v-else class="text-center mt-4">Nessuna immagine</div>

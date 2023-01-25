@@ -11,6 +11,7 @@ export default {
         return {
             store,
             projects: [],
+            types : [],
             currentPage: 1,
             lastPage: null,
             totalProjects: null,
@@ -19,6 +20,7 @@ export default {
     },
     created() {
         this.getProjects(1);
+        this.getTypes();
     },
     methods: {
         getProjects(page) {
@@ -38,6 +40,11 @@ export default {
                 this.totalProjects = resp.data.results.total;
                 this.loading = false;
             });
+        },
+        getTypes(){
+            axios.get(`${this.store.url}/api/types`).then(resp => {
+                this.types = resp.data.results;
+            })
         }
     },
 
@@ -50,8 +57,19 @@ export default {
         <AppLoader v-if="loading" />
         <div v-else class="row justify-content-center py-4">
             <div class="col-11 col-md-10 col-lg-8">
+            
+                <form action="">
+                    <select id="">
+                        <option value="">Tutti</option>
+                        <option v-for="type in types" :value="type.id" > 
+                            {{ type.name }}
+                        </option>
+                    </select>
+                    <button> </button>
+                </form>
+
                 <p class="text-end">Totale {{ totalProjects }} Progetti trovati</p>
-                
+            
                 <AppProjectCard :project="project" v-for="project in projects" :key="project.id" />
 
                 <!--navigation-->
