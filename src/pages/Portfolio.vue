@@ -12,10 +12,11 @@ export default {
             store,
             projects: [],
             types : [],
+            selectedType: "",
             currentPage: 1,
             lastPage: null,
             totalProjects: null,
-            loading: false
+            loading: false,
         };
     },
     created() {
@@ -28,9 +29,15 @@ export default {
             //console.log(page);
             const options = {
                 params: {
-                    page
+                    page,
+                    // type_id: this.selectedType
                 }
             }
+            //aggiungiamo ai params della chiamata solo la scelta che sia diversa da stringa vuota, che se venisse selezionata altrimenti darebbe sempre tutti.
+            if(this.selectedType !== ""){
+                options.params.type_id = this.selectedType;
+            }
+
             this.loading = true;
             axios.get(`${this.store.url}/api/projects`, options).then(resp => {
                 console.log(resp.data.results);
@@ -58,14 +65,14 @@ export default {
         <div v-else class="row justify-content-center py-4">
             <div class="col-11 col-md-10 col-lg-8">
             
-                <form action="">
-                    <select id="">
+                <form @submit.prevent="getProjects(1)" action="" class="d-flex">
+                    <select id="" class="from-select" v-model="selectedType">
                         <option value="">Tutti</option>
-                        <option v-for="type in types" :value="type.id" > 
+                        <option v-for="type in types" :value="type.id"> 
                             {{ type.name }}
                         </option>
                     </select>
-                    <button> </button>
+                    <button type="submit" class="btn btn-success"> Filtra </button>
                 </form>
 
                 <p class="text-end">Totale {{ totalProjects }} Progetti trovati</p>
