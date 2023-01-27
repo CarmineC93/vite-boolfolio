@@ -18,8 +18,9 @@ export default{
 
 
 <template>
-    <AppHeader/>
-
+    <!-- per isolare un componente (in questo caso appHeader) nel caso fossimo nella notfound page -->
+    <AppHeader v-if="$route.name !== 'not-found'"/>
+    <p>{{ $route.name }}</p>
     <router-view></router-view>
     
 </template>
