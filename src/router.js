@@ -3,6 +3,8 @@ import HomePage from "./pages/HomePage.vue";
 import AboutUs from "./pages/AboutUs.vue";
 import Portfolio from "./pages/Portfolio.vue";
 import SingleProject from "./pages/SingleProject.vue";
+import ContactUs from "./pages/ContactUs.vue";
+
 import NotFound from "./pages/NotFound.vue";
 
 
@@ -27,6 +29,11 @@ const router = createRouter({
             path: "/portfolio",
             name: "portfolio",
             component: Portfolio,
+        },
+        {
+            path: "/contacts",
+            name: "contacts",
+            component: ContactUs, 
         },
         {
         //il contenuto della pagina cambierà in base al parametro dopo i :
