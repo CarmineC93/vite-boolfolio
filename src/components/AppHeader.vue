@@ -15,6 +15,10 @@ export default {
                 {
                     label: 'Portfolio',
                     routeName: 'portfolio'
+                },
+                {
+                    label: "Contact us",
+                    routeName: "contacts"
                 }
             ]
         }

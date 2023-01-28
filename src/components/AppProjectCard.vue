@@ -7,7 +7,6 @@ export default {
         return {
             store,
             contentMaxLength: 50,
-            // qui l'url mi servirà per le immagini
         }
     },
     props: {

@@ -9,6 +9,7 @@ export default {
             loading: false,
             name: "",
             email: "",
+            //qui prelevo dati da inviare a db
             message: "",
             success: false,
             errors: {}
@@ -22,9 +23,10 @@ export default {
                 email: this.email,
                 message: this.message
             };
+            //con questa pulizia dopo un primo errore si evita che il messaggio di errore resti alla successiva chiamata
             this.errors = {};
 
-            axios.post(`${this.store.apiBaseUrl}/api/leads`, data).then(resp => {
+            axios.post(`${this.store.url}/api/leads`, data).then(resp => {
                 this.success = resp.data.success;
                 if (this.success) {
                     this.name = "";
